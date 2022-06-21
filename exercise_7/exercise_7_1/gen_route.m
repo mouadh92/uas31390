@@ -6,8 +6,8 @@
 function [route_scaled] = gen_route(start, end_)
 
 %% Input the map
-load('wall.txt')
-
+load('auto_wall.txt')
+wall = auto_wall;
 % Define the map size
 max_x = wall(length(wall) - 2, 1);
 max_y = wall(length(wall) - 2, 2);

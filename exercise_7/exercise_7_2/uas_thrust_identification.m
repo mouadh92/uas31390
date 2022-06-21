@@ -11,12 +11,11 @@ load('pwm.mat')
 g = 9.81;
 
 %% Identification
-t1 = 2.5;
-t2 = 6.9;
-indices = pwm.Time > t1 & pwm.Time < t2;
+t1 = 5;
+t2 = 15;
+indices = out.pwm.Time > t1 & out.pwm.Time < t2;
 
 %%
-
 figure
 plot(acceleration.Time, acceleration.Data - g)
 grid on
@@ -25,7 +24,6 @@ plot(pwm.Time, pwm.Data/60000)
 ylim([-10 10])
 
 %%
-
 x = pwm.Data(indices)/60000;
 y = acceleration.Data(indices) - g;
 result = uas_fit(x, y);

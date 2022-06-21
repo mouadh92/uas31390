@@ -42,16 +42,13 @@ B = [2 5 1];
 C = [3 5 1];
 D = [4 5 1];
 
-start = E;
-end_ = A;
+start = H;
+end_ = B;
 
 [route_scaled] = gen_route(start, end_);
 routeEnd = route_scaled(end,:);
-routeEnd1 = routeEnd;
-routeEnd2 = routeEnd;
-routeEnd1(3) = 0;
-routeEnd2(3) = -0.5;
-route = ([route_scaled; routeEnd1; routeEnd2]);
+routeEnd(3) = 0;
+route = ([route_scaled; routeEnd]);
 
 route
 
